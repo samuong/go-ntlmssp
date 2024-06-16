@@ -144,7 +144,7 @@ func TestToUnicode(t *testing.T) {
 }
 
 func TestNTLMhash(t *testing.T) {
-	v := getNtlmHash(password)
+	v := GetNtlmHash(password)
 	if expected := []byte{0xcd, 0x06, 0xca, 0x7c, 0x7e, 0x10, 0xc9, 0x9b, 0x1d, 0x33, 0xb7, 0x48, 0x5a, 0x2e, 0xd8, 0x08}; !bytes.Equal(v, expected) {
 		t.Fatalf("expected %v, got %v", expected, v)
 	}

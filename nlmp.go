@@ -15,10 +15,10 @@ import (
 )
 
 func getNtlmV2Hash(password, username, target string) []byte {
-	return hmacMd5(getNtlmHash(password), toUnicode(strings.ToUpper(username)+target))
+	return hmacMd5(GetNtlmHash(password), toUnicode(strings.ToUpper(username)+target))
 }
 
-func getNtlmHash(password string) []byte {
+func GetNtlmHash(password string) []byte {
 	hash := md4.New()
 	hash.Write(toUnicode(password))
 	return hash.Sum(nil)

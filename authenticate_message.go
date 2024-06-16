@@ -82,7 +82,7 @@ func (m authenicateMessage) MarshalBinary() ([]byte, error) {
 // ProcessChallenge crafts an AUTHENTICATE message in response to the CHALLENGE message
 // that was received from the server
 func ProcessChallenge(challengeMessageData []byte, domain, user, password string) ([]byte, error) {
-	hash := getNtlmHash(password)
+	hash := GetNtlmHash(password)
 	return ProcessChallengeWithHash(challengeMessageData, domain, user, hash)
 }
 
